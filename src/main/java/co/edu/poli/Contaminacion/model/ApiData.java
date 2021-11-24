@@ -5,18 +5,18 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Contaminacion")
-public class Principal {
+public class ApiData {
  
 	@Id
 	private ObjectId _id;
 	private Department departamento;
 	private Measurement medicion; 
 	
-	public Principal(){
+	public ApiData(){
 		
 	}
 
-	public Principal( Department departamento, Measurement medicion) {
+	public ApiData( Department departamento, Measurement medicion) {
 		super();
 		this.departamento = departamento;
 		this.medicion = medicion;
