@@ -1,0 +1,27 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.logo {
+  max-width: 85px;
+}
+
+nav {
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+
+    li {
+      margin-left: 15px;
+      a {
+        color: #3dc965;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+  }
+}

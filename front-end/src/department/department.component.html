@@ -1,0 +1,34 @@
+<h1 class="title-page">Departamento</h1>
+
+<div class="add-block">  
+  <input id="cityName" #cityName type="text" />
+  <button class="primary-button" type="button" (click)="addElement(cityName.value)">Agregar</button>
+</div>
+
+<div *ngFor="let departament of departamentList" class="item-city">
+  <span>
+    {{departament.name}}
+  </span>
+
+  <div>
+    <div *ngIf="showEdit === departament.id">
+      <input id="cityName" #editElement type="text" [value]="departament.name" />
+      <button class="primary-button" (click)="updateItem(departament, editElement.value)">Guardar</button>
+    </div>
+
+    <div *ngIf="showEdit !== departament.id">
+      <button class="button-icon" (click)="handleShowEdit(departament.id)">
+        <img src="/assets/images/edit-icon.png"/>
+      </button>
+    </div>
+    <div *ngIf="showEdit === departament.id">
+      <button class="button-icon" (click)="handleHiddenEdit()">
+        <img src="/assets/images/close-icon.png"/>
+      </button>
+    </div>
+    <button (click)="removeElement(departament.id)" class="button-icon">
+      <img src="/assets/images/remove-icon.png"/>
+    </button>
+  </div>
+
+</div>

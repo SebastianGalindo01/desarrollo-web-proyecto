@@ -1,0 +1,34 @@
+<h1 class="title-page">Reporte</h1>
+<section>
+  <aside>
+    <button (click)="handleActiveTab('country')" [class.active]="activeTab === 'country'">
+      DEPARTAMENTO
+    </button>
+    <button (click)="handleActiveTab('city')" [class.active]="activeTab === 'city'">
+      MUNICIPIO
+    </button>
+  </aside>
+  <section>
+    <div *ngIf="activeTab === 'country'">
+      <div *ngFor="let country of countryList" class="card-register">
+        <span>
+          {{country.name}}
+        </span>
+        <span>
+          {{country.report}}
+        </span>
+      </div>
+    </div>
+
+    <div  *ngIf="activeTab === 'city'">
+      <div *ngFor="let city of cityList"  class="card-register">
+        <span>
+          {{city.name}}
+        </span>
+        <span>
+          {{city.report}}
+        </span>
+      </div>
+    </div>
+  </section>
+</section>

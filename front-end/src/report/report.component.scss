@@ -1,0 +1,58 @@
+section {
+  display: flex;
+  
+  aside {
+    flex: 1;
+    button {
+      background: #e7e7e7;
+      border: none;
+      padding: 20px 10px;
+      color: #5a5a5a;
+      font-weight: bold;
+      font-size: 15px;
+      margin-bottom: 15px;
+      border-radius: 6px 0 0 6px;
+      display: block;
+      width: 100%;
+      cursor: pointer;
+      transition: 0.5s;
+      
+      &.active {
+        background: #aaaaaa;
+        color: white;
+      }
+
+      &:hover {
+        background: #aaaaaa;
+        color: white;
+      }
+    }
+  }
+
+  section {
+    display: block;
+    flex: 3;
+    width: 100%;
+    border: 1px solid #e7e7e7;
+    border-radius: 0 6px 6px 6px;
+    padding: 20px;
+
+    .card-register {
+      background: white;
+      border: 1px solid #b6b6b6;
+      box-shadow: 1px 1px 10px silver;
+      padding: 19px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        font-weight: bold;
+        color: #7a7a7a;
+      }
+    }
+  }
+}

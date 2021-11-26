@@ -1,0 +1,33 @@
+<h1 class="title-page">Municipio</h1>
+<div class="add-block">
+  <input id="cityName" #cityName type="text" />
+  <button class="primary-button" type="button" (click)="addElement(cityName.value)">Agregar</button>
+</div>
+
+<div *ngFor="let town of townList" class="item-city">
+  <span>
+    {{town.name}}
+  </span>
+
+  <div>
+    <div *ngIf="showEdit === town.id">
+      <input id="cityName" #editElement type="text" [value]="town.name" />
+      <button class="primary-button" (click)="updateItem(town, editElement.value)">Guardar</button>
+    </div>
+
+    <div *ngIf="showEdit !== town.id">
+      <button class="button-icon" (click)="handleShowEdit(town.id)">
+        <img src="/assets/images/edit-icon.png"/>
+      </button>
+    </div>
+    <div *ngIf="showEdit === town.id">
+      <button class="button-icon" (click)="handleHiddenEdit()">
+        <img src="/assets/images/close-icon.png"/>
+      </button>
+    </div>
+    <button (click)="removeElement(town.id)" class="button-icon">
+      <img src="/assets/images/remove-icon.png"/>
+    </button>
+  </div>
+
+</div>
